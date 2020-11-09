@@ -1,0 +1,6 @@
+<!--pages/module/module.wxml-->
+<view class="images_box">
+  <view class="poster" wx:for="{{imagesList}}" wx:for-item="image" wx:key="index">
+    <image class="img" src="{{image}}" mode='aspectFill'  data-src="{{image}}" bindtap="previewImage"></image>
+  </view>
+</view>

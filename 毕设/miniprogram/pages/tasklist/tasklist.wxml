@@ -1,0 +1,11 @@
+<!--pages/tasklist/tasklist.wxml-->
+<view class="img">
+  <image src="/images/tasklist/add.png" class="add" bindtap="add"></image>
+</view>
+<scroll-view scroll-y class="tasks">
+  <view class="tab" wx:for='{{itemsList}}' wx:for-item='items' wx:key='_id' bindtap="slectitem" data-index='{{items._id}}'>
+    <view class="a">
+      <view class="b">{{items.title}}</view>
+    </view>
+  </view>
+</scroll-view>

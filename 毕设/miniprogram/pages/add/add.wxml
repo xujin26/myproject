@@ -1,0 +1,61 @@
+<!--pages/add/add.wxml-->
+<form bindsubmit="bindFormSubmit">
+  <view class="a">
+    <input class="title" type="text" placeholder="标题" placeholder-style="font-size:16px;color:#DDDDDD;" name="title"/>
+    <button plain="true" class="btn" form-type="submit" type="primary"><image class="ok" src="/images/add/ok.png"></image></button>
+  </view>
+  <view class="b"></view>
+  <textarea class="content" maxlength="-1" placeholder="文字添加" placeholder-style="font-size:14px;color:#666666;" name="content" show-confirm-bar = "{{false}}" disabled="{{disabled}}"></textarea>
+  <view class="c">
+    <view class="d">
+      <image bindtap="att" class="att" src="/images/add/attachment.png" name="pic"></image>
+    </view>
+    <view class="e">
+      <view class="name">标签</view>
+    </view>
+    <view class="f">
+      <input type="text" disabled class="label" bindtap="selectlabel" placeholder="{{label}}"></input>
+    </view>
+  </view>
+</form>
+<view class="{{flag=='0'?'bg':'hideBg'}}">
+  <view class="mask" bindtap="toggleDialog" />
+  <view class="radioBg">
+    <view bindtap="Addlabel" class="addlabel">添加标签</view>
+      <view class='list_item' wx:for='{{labelsList}}' wx:for-item='labels' wx:key='_id' bindtap="changelabel" data-index='{{labels.label}}'>
+        <view class="radioName" style="white-space:nowrap;overflow: hidden;text-overflow: ellipsis;">{{labels.label}}</view>
+      </view>
+  </view>
+</view>
+
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+  <form bindsubmit="Submit">
+    <view class="zan-dialog__mask"/>
+    <view class="zan-dialog__container">
+      <view class="y">新建标签</view>
+      <input class="z" type="text" name="key" value='{{inputValue}}'/>
+      <view style="height:16%;"></view>
+      <view class="x">
+        <view class="x1" bindtap="x1">取消</view>
+        <view class="x2">
+          <button plain="true" class="x3" form-type="submit">确定</button>
+        </view>
+      </view>
+    </view>
+  </form>
+</view>
+
+
+<view class="show-dialog {{ show ? 'dialog-show' : '' }}">
+  <view class="show-dialog__mask"/>
+  <view class="show-dialog__container">
+    <view class="y1">
+      <view class="y2">提醒</view>
+    </view>
+    <view class="z1">请确认是否添加提醒</view>
+    <view class="xx">
+      <view class="x4" id="x4" bindtap="x4">取消</view>
+      <view class="x5" id="x5" bindtap="x5">确定</view>
+    </view>
+  </view>
+</view>

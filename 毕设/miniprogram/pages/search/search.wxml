@@ -1,0 +1,24 @@
+<!--pages/search/search.wxml-->
+<view class="search-page">
+  <form bindsubmit="bindFormSubmit">
+    <view class="search-wrapper">
+      <view class="a">
+        <view class="b"><image class="sea" src="/images/task/search.png"></image>
+        <input class="search" style="color:#c9a7a7;font-size: 14px;"
+        placeholder="输入搜索信息"
+        placeholder-style="color: #c9a7a7;" auto-focus
+        placeholder-class="placeholder"
+        name="key"/>
+        </view>
+        <button plain="true" class="btn" form-type="submit">搜索</button>
+      </view>
+    </view>
+  </form>
+</view>
+<view id='items_list' class="items_list">
+  <view class='list_item' wx:for='{{itemsList}}' wx:for-item='items' wx:key='_id'>
+    <view class="c" bindtap='gotoDetail' data-index='{{items._id}}'>
+      <text class='items_title' >{{items.title}}——{{items.label}}</text>
+    </view>
+  </view>
+</view>

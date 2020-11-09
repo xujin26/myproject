@@ -1,0 +1,27 @@
+<!--pages/detail/detail.wxml-->
+<view class="title">{{note.title}}</view>
+<scroll-view class="container" scroll-y>
+  <view class="poster" wx:for="{{imagesList}}" wx:for-item="image" wx:key="index">
+    <image src="{{image}}" mode="widthFix"  data-src="{{image}}" bindtap="previewImage"></image>
+  </view>
+  <view class="content" style="white-space:pre-wrap">{{note.content}}</view>
+</scroll-view>
+<view class="img">  
+    <image bindtap="edit" class="edit" src="/images/detail/edit.png"></image>
+    <image bindtap="finish" class="edit" src="/images/detail/finish.png"></image>
+    <image bindtap="delete" class="edit" src="/images/detail/delete.png"></image>
+</view>
+
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+  <view class="zan-dialog__mask"/>
+  <view class="zan-dialog__container">
+    <view class="y">
+      <view class="y1">删除</view>
+    </view>
+    <view class="z">您将删除该笔记及其笔记以后所有的复习计划，是否执行该操作</view>
+    <view class="x">
+      <view class="x1" bindtap="x1">取消</view>
+      <view class="x2" bindtap="x2">确定</view>
+    </view>
+  </view>
+</view>

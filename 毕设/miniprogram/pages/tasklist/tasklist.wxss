@@ -1,0 +1,22 @@
+/* pages/tasklist/tasklist.wxss */
+.add {
+  width: 26px;
+  height: 26px;
+  display: fixed;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.tasks {
+  width: 90%;
+  margin: 0 auto;
+}
+.tab {
+  height: 70px;
+  display: flex;
+  align-items: center;/**子view垂直居中*/
+  border-bottom: 1px solid #9e9c9c;
+}
+.b {
+  font-weight: 600;
+  font-size: 16px;
+}

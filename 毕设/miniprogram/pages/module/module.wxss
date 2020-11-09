@@ -1,0 +1,27 @@
+/* pages/module/module.wxss */
+/*图片*/
+page {
+  width:100%;
+}
+.images_box{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  background-color: white;
+}
+.poster{
+  border: 5rpx;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.452);
+  width: 29%;
+  height: 200rpx;
+  margin-left: 2.5%;
+  margin-top: 20rpx;
+  position: relative;
+}
+.img{
+  width: 100%;
+  height: 100%;
+}

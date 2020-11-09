@@ -1,0 +1,79 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="head">
+    <view class="a">
+      <image bindtap="cre" class="cre" src="/images/index/create.png"></image>
+    </view>
+    <view class="b">
+      <image bindtap="cal" class="cal" src="/images/index/calendar.png" data-statu="open"></image>
+    </view>
+    <view class="c">
+      <image bindtap="del" class="del" src="/images/index/delete.png"></image>
+    </view>
+  </view>
+  <view>{{cur_year}}年{{cur_month}}月{{cur_day}}日</view>
+</view>
+      
+
+<scroll-view scroll-y class="items">
+  <checkbox-group bindchange="checkboxChange">
+    <view class="item" wx:for='{{itemsList}}' wx:for-item='items' wx:key='_id'>
+      <view class="checkboxItem">
+          <view class="checkboxVal"><checkbox value="{{items._id}}" checked="{{selected}}"/></view>
+          <view class="checkboxName" bindtap="slectitem" data-index='{{items._id}}'>{{items.title}}</view>
+      </view>
+    </view>
+  </checkbox-group>
+</scroll-view>
+
+
+
+
+
+<!--遮罩层mask--> 
+<view class="drawer_screen" data-statu="close" wx:if="{{showModalStatus}}"></view> 
+<!--content--> 
+<!--使用animation属性指定需要执行的动画--> 
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}"> 
+ 
+  <!--drawer content-->  
+  <view class="drawer_content"> 
+    <view class="canlendarView">
+      <view class="canlendarTopView">
+        <view class="leftBgView" bindtap="handleCalendar" data-handle="prev">
+          <image class="left" src="/images/index/left.png"></image>          
+        </view>
+        <view class="centerView">{{cur_year || "--"}} 年 {{cur_month || "--"}} 月</view>
+        <view class="rightBgView" bindtap="handleCalendar" data-handle="next">
+          <image class="right" src="/images/index/right.png"></image>       
+        </view>
+      </view>
+      <view class="weekBgView">
+        <view class="weekView" wx:for="{{weeks_ch}}" wx:key="index" data-idx="{{index}}">{{item}}           </view>
+      </view>
+      <view class="dateBgView">
+        <view wx:if="{{hasEmptyGrid}}" class="dateEmptyView" wx:for="{{empytGrids}}" wx:key="index" data-idx="{{index}}">
+        </view>
+        <view class="dateView" wx:for="{{days}}" wx:key="index" data-idx="{{index}}" bindtap="dateSelectAction">
+          <view class="datesView {{index == todayIndex ? 'dateSelectView' : ''}}">{{item}}</view>
+        </view>
+      </view>
+    </view>
+  </view> 
+  <view class="btn_ok" bindtap="cal" data-statu="close">确定</view> 
+</view>
+
+
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+  <view class="zan-dialog__mask"/>
+    <view class="zan-dialog__container">
+      <view class="y">
+        <view class="y1">删除</view>
+      </view>
+      <view class="z">您将删除该笔记及其笔记以后所有的复习计划，是否执行该操作</view>
+      <view class="x">
+        <view class="x1" bindtap="x1">取消</view>
+        <view class="x2" bindtap="x2">确定</view>
+      </view>
+    </view>
+</view>

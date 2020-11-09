@@ -1,0 +1,10 @@
+<!--pages/about/about.wxml-->
+<view class="img">
+  <image id='img' src='/images/about.png'></image>
+  <view class="notice">注意事项</view>
+</view>
+<view class="content">
+  <view>1.每次最多上传六张图片,多余图片不再上传</view>
+  <view>2.上传图片后，页面提示上传成功后才可以提交提醒事项</view>
+  <view>3.用户完成系统发送提醒的内容后，需点击完成，添加后续提醒</view>
+</view>

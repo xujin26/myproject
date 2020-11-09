@@ -1,0 +1,54 @@
+<!--pages/task/task.wxml-->
+<scroll-view class="container">
+<view class="head">
+  <view class="search-wrapper" catchtap="toSearch">
+    <input class="search" placeholder="输入搜索信息" 
+      placeholder-style="color: #c9a7a7;" disabled 
+      placeholder-class="placeholder"/>
+    <view><image class="sea" src="/images/task/search.png"></image></view>
+  </view>
+  <view class="img">
+    <image src="/images/tasklist/add.png" class="add" bindtap="add"></image>
+  </view>
+  </view>
+</scroll-view>
+<scroll-view scroll-y class="labels">
+  <view class="tab" wx:for='{{labelsList}}' wx:for-item='labels' wx:key='_id' bindtap="selectlabel" data-index='{{labels.label}}' bindlongpress="editlabel">
+    <view class="a">
+      <view class="b">{{labels.label}}</view>
+      <view class="c">{{labels.num}}条笔记</view>
+    </view>
+  </view>
+</scroll-view>
+
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+  <form bindsubmit="Submit">
+    <view class="zan-dialog__mask"/>
+    <view class="zan-dialog__container">
+      <view class="y">新建标签</view>
+      <input class="z" type="text" name="key" value='{{inputValue}}'/>
+      <view style="height:16%;"></view>
+      <view class="x">
+        <view class="x1" bindtap="x1">取消</view>
+        <view class="x2">
+          <button plain="true" class="x3" form-type="submit">确定</button>
+        </view>
+      </view>
+    </view>
+  </form>
+</view>
+
+
+<view class="dialog {{ Dialog ? 'dialog--show' : '' }}">
+  <view class="dialog__mask"/>
+  <view class="dialog__container">
+    <view class="t">
+      <view class="t1">删除</view>
+    </view>
+    <view class="m">您将删除该标签及其里面的笔记，是否执行该操作</view>
+    <view class="p">
+      <view class="exit" bindtap="exit">取消</view>
+      <view class="ensure" bindtap="ensure">确定</view>
+    </view>
+  </view>
+</view>

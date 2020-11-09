@@ -1,0 +1,73 @@
+/* pages/search/search.wxss */
+.search-wrapper {
+  margin: 3px auto;
+  width: 94%;
+  position: relative;
+  display: flex;
+  height: 30px;
+}
+.a {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.b {
+  width: 80%;
+  border-radius: 26px;
+  border: 1px solid rgba(12, 120, 139, 0.884);
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 26px;
+}
+.search {
+  height: 26px;
+  flex: 1;
+  caret-color: #c9a7a7;
+}
+.sea {
+  width: 46rpx;
+  height: 46rpx;
+}
+.placeholder {
+  font-size: 14px;
+  text-align: center;
+  color: #c9a7a7;
+}
+.btn {
+  height: 28px;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;/**子view垂直居中*/
+  justify-content: center;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 0px 0px;
+}
+button:not([size='mini']) {
+  width: 20% !important;
+  min-height: 28px;
+}
+button[plain] {
+  border: none;
+}
+button[type=primary][plain] {
+  border: none;
+}
+.items_list {
+  width: 94%;
+  margin: 0 auto;
+}
+.c {
+  height: 30px;
+  border-bottom: 1px solid #DDDDDD;
+  width: 100%;
+}
+.items_title{
+  height: 30px;
+  font-size: 14px;
+  margin: 0px auto;
+  width: 100%;
+}

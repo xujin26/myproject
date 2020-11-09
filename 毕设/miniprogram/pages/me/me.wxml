@@ -1,0 +1,32 @@
+<!--pages/me/me.wxml-->
+<view id='myLogin'>
+  <block wx:if='{{isLogin}}'>
+    <image id='myIcon' src='{{src}}'></image>
+    <text id='nickName'>{{nickName}}</text>
+  </block>
+  <block wx:else class="login">
+    <image id='Icon' src="/images/me/head.png"></image>
+    <button open-type='getUserInfo' bindgetuserinfo='getMyInfo' id='btn'>
+    未登录，点此登录
+    </button> 
+  </block>
+</view>
+
+<view class="item" bindtap="module">
+  <view class="img">
+    <image src="/images/me/module.png" style="width:20px; height:20px;"></image>
+  </view>
+  <view class="name">图片模块</view>
+  <view class="detail"><text>></text></view>
+</view>
+<view class="line">
+</view>
+<view class="item" bindtap="about">
+  <view class="img">
+    <image src="/images/me/about.png" style="width:20px; height:20px;"></image>
+  </view>
+  <view class="name">关于</view>
+  <view class="detail"><text>></text></view>
+</view>
+<view class="line">
+</view>

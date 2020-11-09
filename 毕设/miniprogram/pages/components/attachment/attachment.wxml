@@ -1,0 +1,18 @@
+<!--pages/components/attachment/attachment.wxml-->
+<view class='pages'>
+  <!-- 图片 -->
+  <view class="images_box">
+    <block wx:key="imgbox" wx:for="{{imgbox}}">
+      <view class='img-box'>
+        <image class='img' src='{{item}}' mode='aspectFill'></image>
+        <view class='img-delect' data-deindex='{{index}}' bindtap='imgDelete'>
+          <image class='img' src='/images/delete.png'></image>   
+        </view>
+      </view>
+    </block>
+    <view class='img-box' bindtap='addPic1' wx:if="{{imgbox.length<6}}">
+      <image class='img' src='/images/add_image.png'></image>   
+    </view>
+  </view>
+  <button bindtap='fb'>上传图片</button>
+</view>

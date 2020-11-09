@@ -1,0 +1,237 @@
+/* pages/task/task.wxss */
+.container {
+  padding: 10rpx 0px;
+  width: 94%;
+  display: flex;
+  margin: auto;
+}
+.head {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;/**子view垂直居中*/
+  justify-content: center;
+}
+.search-wrapper {
+  border-radius: 26px;
+  border: 1px solid rgba(12, 120, 139, 0.884);
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 26px;
+  width: 90%;
+}
+.img {
+  height: 26px;
+  width: 10%;
+  text-align: right; 
+}
+.add {
+  height: 20px;
+  width: 20px;
+  margin-top: 3px;
+}
+.search-wrapper .search {
+  font-size: 14px;
+  flex: 1;
+}
+.placeholder {
+  font-size: 14px;
+  text-align: center;
+}
+.sea {
+  width: 46rpx;
+  height: 46rpx;
+  margin-right: 10px;
+  margin-top: 4px;
+}
+.labels {
+  width: 94%;
+  margin: 0 auto;
+}
+.tab {
+  height: 70px;
+  display: flex;
+  align-items: center;/**子view垂直居中*/
+  border-bottom: 1px solid #9e9c9c;
+}
+.b {
+  font-weight: 600;
+  font-size: 16px;
+}
+.c {
+  font-weight: 400;
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+
+/**添加
+*标签
+*弹窗*/
+.zan-dialog__mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.589);/**设置阴影半透明背景如：*/
+  display: none;
+}
+
+.zan-dialog__container {
+  position: fixed;
+  bottom: 400rpx;
+  width: 80%;/**弹窗布局宽*/
+  height: 350rpx;/**弹窗布局高，与下面弹出距离transform有关*/
+  margin-left: 10%;
+  background:  rgb(200, 224, 218);
+  transform: translateY(300%);/**弹框弹出距离，与弹框布局高度有关，如300%表示弹起距离为3倍弹窗高度*/
+  transition: all 0.4s ease;
+  z-index: 12;
+  border-radius: 20rpx;
+  border: 1px solid rgb(184, 158, 158);
+}
+.zan-dialog--show .zan-dialog__container {
+  transform: translateY(-56%);
+}
+.zan-dialog--show .zan-dialog__mask {
+  display: block;
+}
+.y {
+  height: 34%;
+  font-size: 18px;
+  color: white;
+  /**设置view中的文字垂直居中*/
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+.z {
+  border: 1px solid #cccccc;
+  height:20%;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: white;
+}
+.x {
+  height: 30%;
+  border-top: 1px solid #cccccc;
+  display: flex; /*设置显示样式**/
+}
+.x1 {
+  height: 100%;
+  width:50%;
+  border-right: 1px solid #cccccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 17px;
+  font-weight: 500
+}
+.x2 {
+  height: 100%;
+  width:50%;
+}
+.x3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 17px;
+  width: 100px;
+  height: 100%;
+}
+button:not([size='mini']) {/**设置后文字可以显示居中*/
+  width: 100px !important;
+}
+button[plain] {/**去除button边框*/
+  border: none;
+}
+
+
+
+/**添加删除事项
+*标签
+*弹窗*/
+.dialog__mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.589);/**设置阴影半透明背景如：*/
+  display: none;/*隐藏元素*/
+}
+
+.dialog__container {
+  position: fixed;
+  bottom: 400rpx;
+  width: 90%;/**弹窗布局宽*/
+  height: 350rpx;/**弹窗布局高，与下面弹出距离transform有关*/
+  margin-left: 5%;
+  background:  white;
+  transform: translateY(300%);/**弹框弹出距离，与弹框布局高度有关，如300%表示弹起距离为3倍弹窗高度*/
+  transition: all 0.4s ease;/*0.4秒钟完成所有过度效果，缓慢的*/
+  z-index: 12;/*显示在遮罩层上方*/
+  border: 1px solid rgba(0, 0, 0, 0.589);
+}
+.dialog--show .dialog__container {
+  transform: translateY(-56%);
+}
+.dialog--show .dialog__mask {
+  display: block;
+}
+.t {
+  background-color: #008888;
+  height: 30%;
+  width: 100%;
+}
+.t1 {
+  width: 80%;
+  height: 100%;
+  font-size: 18px;
+  color: white;
+  margin: 0 auto;
+  /**设置view中的文字垂直居中*/
+  display: flex;
+  align-items: center;
+}
+.m {
+  height:40%;
+  width: 85%;
+  margin: 0 auto;
+  background-color: white;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+.p {
+  height: 30%;
+  border-top: 1px solid #cccccc;
+  display: flex; /*设置显示样式**/
+}
+.exit {
+  height: 100%;
+  width:50%;
+  border-right: 1px solid #cccccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  font-weight: 500;
+}
+.ensure {
+  height: 100%;
+  width:50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  font-weight: 500;
+}
